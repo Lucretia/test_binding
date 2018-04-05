@@ -8,9 +8,9 @@ project Test_Binding is
    for Main use ("test_binding.adb");
 
    package Compiler is
-      -- "-gnatL", "-gnatdZ", "-gnatdV",
+      -- for Switches ("Ada") use ("-O0", "-g", "-gnatL", "-gnatdZ", "-gnatdV");
       for Switches ("Ada") use ("-O0", "-g");
-      -- "-fdump-class-hierarchy",
+      -- for Switches ("C++") use ("-O0", "-g", "-ggdb", "-fdump-class-hierarchy");
       for Switches ("C++") use ("-O0", "-g", "-ggdb");
    end Compiler;
 end Test_Binding;

@@ -4,6 +4,7 @@
 class Base {
 public:
   Base();
+  Base(const int v);
   virtual ~Base();
 
   virtual void DoOne() = 0;

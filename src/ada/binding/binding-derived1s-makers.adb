@@ -19,4 +19,16 @@ package body Binding.Derived1s.Makers is
 
       Put_Line ("  (Ada)" & L1.HT & "Binding.Derived1s.Makers.New_Derived1 (finish)");
    end New_Derived1;
+
+   procedure New_Derived1 (Object : in out Derived1; Value : in Interfaces.C.int) is
+   begin
+      Put_Line ("  (Ada)" & L1.HT & "Binding.Derived1s.Makers.New_Derived1 (" &
+                  Interfaces.C.int'Image (Value) & ") (start)");
+
+      Object.CPP_Self  := Binding.Derived1s.API.ctor (Object'Address, Value);
+      Object.Ref_Count := Object.Ref_Count + 1;
+
+      Put_Line ("  (Ada)" & L1.HT & "Binding.Derived1s.Makers.New_Derived1 (" &
+                  Interfaces.C.int'Image (Value) & ") (finish)");
+   end New_Derived1;
 end Binding.Derived1s.Makers;

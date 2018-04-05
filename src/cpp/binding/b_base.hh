@@ -10,6 +10,7 @@ typedef const void (*ThunkPtr_DoTwo_Type)(Ada_Base);
 class B_Base : public Base {
 public:
   B_Base(Ada_Base b);
+  B_Base(Ada_Base b, const int v);
   virtual ~B_Base();
 
   virtual void DoOne();  // Calls thunk below.

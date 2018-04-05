@@ -10,6 +10,7 @@ typedef const void (*ThunkPtr_DoTwo_Type)(Ada_Derived1);
 class B_Derived1 : public Derived1 {
 public:
   B_Derived1(Ada_Derived1 d);
+  B_Derived1(Ada_Derived1 d, const int v);
   virtual ~B_Derived1();
 
   virtual void DoOne();  // Calls thunk below.
@@ -24,6 +25,7 @@ private:
 
 extern "C" {
   B_Derived1 *Derived1_ctor(Ada_Derived1 Ada_Self);
+  B_Derived1 *Derived1_ctor1(Ada_Derived1 Ada_Self, const int v);
   void Derived1_dtor(B_Derived1 *Self);
 
   void Derived1_DoOne(B_Derived1 *Self);

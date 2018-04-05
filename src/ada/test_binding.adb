@@ -11,7 +11,7 @@ begin
    Put_Line ("  (Ada)" & L1.HT & "Test_Binding (start)");
 
    Test : declare
-      D : Binding.Derived1s.Derived1;
+      D, D2 : Binding.Derived1s.Derived1;
       B : Binding.Bases.Base'Class := D;
    begin
       Put_Line ("  (Ada)" & L1.HT & "Test_Binding (declare start)");
@@ -31,6 +31,12 @@ begin
 
       B.Do_One;
       B.Do_Two;
+
+      New_Line;
+
+      Binding.Derived1s.Makers.New_Derived1 (D2, 59);
+
+      Put_Line ("  (Ada)" & L1.HT & "Value: " & C.int'Image (D2.Value));
 
       Put_Line ("  (Ada)" & L1.HT & "Test_Binding (declare finish)");
    end Test;

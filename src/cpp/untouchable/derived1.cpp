@@ -6,6 +6,11 @@ Derived1::Derived1() : Base()
   std::cout << "  (C++)\tDerived1::Derived1()" << std::endl;
 }
 
+Derived1::Derived1(const int v) : Base(v)
+{
+  std::cout << "  (C++)\tDerived1::Derived1(" << v << ")" << std::endl;
+}
+
 Derived1::~Derived1()
 {
   std::cout << "  (C++)\tDerived1::~Derived1()" << std::endl;

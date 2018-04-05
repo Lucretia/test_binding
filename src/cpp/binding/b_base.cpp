@@ -15,6 +15,10 @@ B_Base::B_Base(Ada_Base b) : Base(), Ada_Base_Self(b) {
   std::cout << "  (C++)\tB_Base::B_Base" << std::endl;
 }
 
+B_Base::B_Base(Ada_Base b, const int v) : Base(v), Ada_Base_Self(b) {
+  std::cout << "  (C++)\tB_Base::B_Base(" << v << ")" << std::endl;
+}
+
 B_Base::~B_Base() {
   std::cout << "  (C++)\tB_Base::~B_Base" << std::endl;
 }

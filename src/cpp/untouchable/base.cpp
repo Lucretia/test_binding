@@ -6,6 +6,12 @@ Base::Base() : val(10)
   std::cout << "  (C++)\tBase::Base()" << std::endl;
 }
 
+Base::Base(const int v) : val(v)
+{
+  std::cout << "  (C++)\tBase::Base(" << v << ")" << std::endl;
+}
+
+
 Base::~Base()
 {
   std::cout << "  (C++)\tBase::~Base()" << std::endl;

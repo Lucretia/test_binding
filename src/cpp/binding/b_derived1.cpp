@@ -15,6 +15,10 @@ B_Derived1::B_Derived1(Ada_Derived1 d) : Derived1(), Ada_Derived1_Self(d) {
   std::cout << "  (C++)\tB_Derived1::B_Derived1" << std::endl;
 }
 
+B_Derived1::B_Derived1(Ada_Derived1 d, const int v) : Derived1(v), Ada_Derived1_Self(d) {
+  std::cout << "  (C++)\tB_Derived1::B_Derived1(" << v << ")" << std::endl;
+}
+
 B_Derived1::~B_Derived1() {
   std::cout << "  (C++)\tB_Derived1::~B_Derived1" << std::endl;
 }
@@ -37,6 +41,12 @@ extern "C" {
     std::cout << "  (C)\tDerived1_ctor" << std::endl;
 
     return new B_Derived1(Ada_Self);
+  }
+
+  B_Derived1 *Derived1_ctor1(Ada_Derived1 Ada_Self, const int v) {
+    std::cout << "  (C)\tDerived1_ctor(" << v << ")" << std::endl;
+
+    return new B_Derived1(Ada_Self, v);
   }
 
   void Derived1_dtor(B_Derived1 *Self) {

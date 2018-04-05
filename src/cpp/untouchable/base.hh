@@ -13,9 +13,6 @@ public:
   int Value() const;
   void SetValue(const int v);
 
-  // TODO: Add a static object
-  // static Base Ten;
-
 private:
   int val;
 };

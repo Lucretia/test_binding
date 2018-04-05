@@ -30,4 +30,6 @@ extern "C" {
 
   void Derived1_DoOne(B_Derived1 *Self);
   void Derived1_DoTwo(B_Derived1 *Self);
+
+  Derived1 *Derived1_Ten();
 };

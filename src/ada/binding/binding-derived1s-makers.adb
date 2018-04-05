@@ -31,4 +31,15 @@ package body Binding.Derived1s.Makers is
       Put_Line ("  (Ada)" & L1.HT & "Binding.Derived1s.Makers.New_Derived1 (" &
                   Interfaces.C.int'Image (Value) & ") (finish)");
    end New_Derived1;
+
+   function Ten return Derived1 is
+   begin
+      Put_Line ("  (Ada)" & L1.HT & "Binding.Derived1s.Ten");
+
+      return D : Derived1 do
+         D.CPP_Self  := Binding.Derived1s.API.Ten;
+         D.Owns_Ref  := False;
+         D.Ref_Count := 1;
+      end return;
+   end Ten;
 end Binding.Derived1s.Makers;

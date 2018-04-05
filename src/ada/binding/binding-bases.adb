@@ -54,7 +54,7 @@ package body Binding.Bases is
       if Object.Ref_Count > Natural'First then
          Object.Ref_Count := Object.Ref_Count - 1;
 
-         if Object.Ref_Count = Natural'First then
+         if Object.Ref_Count = Natural'First and Object.Owns_Ref then
             Put_Line ("  (Ada)" & L1.HT & "Binding.Bases.Finalize (deleting)");
 
             Binding.Bases.API.dtor (Object.CPP_Self);

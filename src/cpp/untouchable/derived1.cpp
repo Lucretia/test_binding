@@ -1,6 +1,8 @@
 #include "derived1.hh"
 #include <iostream>
 
+Derived1 Derived1::Ten(10);
+
 Derived1::Derived1() : Base()
 {
   std::cout << "  (C++)\tDerived1::Derived1()" << std::endl;

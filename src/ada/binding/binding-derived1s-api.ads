@@ -31,4 +31,10 @@ private  package Binding.Derived1s.API is
      Import        => True,
      Convention    => C,
      External_Name => "Derived1_DoTwo";
+
+   --    Derived1 *Derived1_Ten()
+   function Ten return System.Address with
+     Import        => True,
+     Convention    => C,
+     External_Name => "Derived1_Ten";
 end Binding.Derived1s.API;

@@ -8,4 +8,6 @@ public:
 
   virtual void DoOne();
   virtual void DoTwo();
+
+  static Derived1 Ten;
 };

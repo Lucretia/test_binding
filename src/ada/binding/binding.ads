@@ -6,7 +6,8 @@ package Binding is
 
    type Root is abstract new Ada.Finalization.Controlled with
       record
-         CPP_Self  : System.Address := System.Null_Address;
+         CPP_Self  : System.Address := System.Null_Address; --  Pointer to the C++ class.
+         Owns_Ref  : Boolean        := True;                --  Was this object created by calling a ctor?
          Ref_Count : Natural        := Natural'First;
       end record;
 end Binding;

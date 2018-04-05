@@ -37,9 +37,12 @@ begin
       Binding.Derived1s.Makers.New_Derived1 (D2, 59);
 
       Put_Line ("  (Ada)" & L1.HT & "Value: " & C.int'Image (D2.Value));
-
       Put_Line ("  (Ada)" & L1.HT & "Test_Binding (declare finish)");
    end Test;
+
+   New_Line;
+
+   Put_Line ("  (Ada)" & L1.HT & "Ten - Value: " & C.int'Image (Binding.Derived1s.Makers.Ten.Value));
 
    Put_Line ("  (Ada)" & L1.HT & "Test_Binding (finish)");
 end Test_Binding;

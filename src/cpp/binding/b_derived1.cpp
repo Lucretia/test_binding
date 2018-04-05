@@ -84,4 +84,11 @@ extern "C"
     // infinite loop.
     Self->Derived1::DoTwo();
   }
+
+  Derived1 *Derived1_Ten()
+  {
+    std::cout << "  (C)\tDerived1_Ten" << std::endl;
+
+    return &Derived1::Ten;
+  }
 };

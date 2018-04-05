@@ -33,7 +33,7 @@ Some_Derived (Application - Ada)
    B_Base    (Binding - C/C++)
       |
     Base     (Untouchable - C++ class)
-``
+```
 
 We can use the idea of a "thunk" which is a pointer to a function. This can be implemented as a static constant
 pointer to a function in the C/C++ binding, which is initialised at link-time to an Ada subprogram which takes a

@@ -1,0 +1,16 @@
+project Test_Binding is
+   for Languages   use ("Ada", "C++");
+   for Source_Dirs use ("../../src/ada/",             -- Main program and support packages go here.
+                        "../../src/ada/binding/",     -- This is the Ada binding to the the cpp/binding interface.
+                        "../../src/cpp/untouchable/", -- This is the library to bind to, it's effectively untouchable.
+                        "../../src/cpp/binding/");    -- This is the C/C++ part of the binding to the untouchable library.
+   for Object_Dir  use "obj";
+   for Main use ("test_binding.adb");
+
+   package Compiler is
+      -- "-gnatL", "-gnatdZ", "-gnatdV",
+      for Switches ("Ada") use ("-O0", "-g");
+      -- "-fdump-class-hierarchy",
+      for Switches ("C++") use ("-O0", "-g", "-ggdb");
+   end Compiler;
+end Test_Binding;
